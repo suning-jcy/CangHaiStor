@@ -62,8 +62,27 @@ CangHaiStor提供广泛的软、硬件平台兼容能力。兼容容器及多种
 * 单卷最大快照个数：16
 
 # 2 构建版本
+操作系统：CentOS7.3 <br>
+    # ./build.sh
+    # cp ./bin/server ./InstallCangHai/bin/canghai
 
 # 3 安装部署
+操作系统：CentOS7.3 <br>
+硬件规格： <br>
+举例：192.168.157.111，192.168.157.112，192.168.157.113 共3台机器搭建测试集群,以下步骤轮流在3台机器上执行，所有机器安装完Etcd再安装Master，以此类推安装完所有模块.<br>
+
+    # sh install-CangHai.sh --module=Etcd --masterips=192.168.157.111,192.168.157.112,192.168.157.113
+    # sh install-CangHai.sh --module=Master --masterips=192.168.157.111,192.168.157.112,192.168.157.113
+    # sh install-CangHai.sh --module=TgtMaster --masterips=192.168.157.111,192.168.157.112,192.168.157.113
+    # sh install-CangHai.sh --module=ChunkServer --masterips=192.168.157.111,192.168.157.112,192.168.157.113
+    # sh install-CangHai.sh --module=Gateway --masterips=192.168.157.111,192.168.157.112,192.168.157.113
+    # sh install-CangHai.sh --module=Seqsnapshot --masterips=192.168.157.111,192.168.157.112,192.168.157.113
+    初始化块存储，在任意1台机器上执行即可
+    # sh init-CangHai.sh --master=192.168.157.111,192.168.157.112,192.168.157.113 --server=192.168.157.111:192.168.157.112:192.168.157.113
+    测试
+    # sh test.sh
+    # lsscis -t
+ 
 
 # 4 License
 
