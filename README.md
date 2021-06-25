@@ -63,6 +63,7 @@ CangHaiStor提供广泛的软、硬件平台兼容能力。兼容容器及多种
 
 # 2 构建版本
 操作系统：CentOS7.3 <br>
+
     # ./build.sh
     # cp ./bin/server ./InstallCangHai/bin/canghai
 
